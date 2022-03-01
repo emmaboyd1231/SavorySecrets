@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v1) {
                 openLoginActivity();
             }
         });
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         sign_up = (Button) findViewById(R.id.sign_up);
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v2) {
                 openSignUpActivity();
             }
         });

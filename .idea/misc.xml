@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout/activity_login.xml" value="0.18072916666666666" />
         <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout/activity_navigation_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout/activity_sign_up.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/emboy/Documents/GitHub/SavorySecrets/app/src/main/res/layout/fragment_home.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/emboy/Downloads/SavorySecrets/app/src/main/res/layout/activity_main.xml" value="0.16" />
       </map>
     </option>

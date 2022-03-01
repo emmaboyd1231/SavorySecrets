@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.savorysecrets.NavigationScreen;
 import com.example.savorysecrets.R;
 import com.example.savorysecrets.ui.login.LoginViewModel;
 import com.example.savorysecrets.ui.login.LoginViewModelFactory;
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+    private Button loginButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,7 +82,8 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy login activity once successful
-                finish();
+                openNavigationScreenActivity();
+                //finish();
             }
         });
 
@@ -112,6 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 return false;
             }
+
         });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -120,8 +125,14 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                openNavigationScreenActivity();
             }
         });
+    }
+
+    public void openNavigationScreenActivity(){
+        Intent intent3 = new Intent(this, NavigationScreen.class);
+        startActivity(intent3);
     }
 
     private void updateUiWithUser(LoggedInUserView model) {

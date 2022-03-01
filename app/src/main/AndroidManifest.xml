@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SavorySecrets">
         <activity
-            android:name=".SIgnUpActivity"
+            android:name=".NavigationScreen"
+            android:exported="false"
+            android:label="@string/title_activity_navigation_screen" />
+        <activity
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"

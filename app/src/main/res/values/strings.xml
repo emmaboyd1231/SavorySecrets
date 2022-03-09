@@ -15,4 +15,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="recipe_ingredients">Recipe Ingredients</string>
+    <string name="recipe_step1">Step 1</string>
+    <string name="recipe_step2">Step 2</string>
+    <string name="recipe_step3">Step 3</string>
+    <string name="recipe_step4">Step 4</string>
+    <string name="recipe_step5">Step 5</string>
+    <string name="recipe_cooking">Cooking Instructions</string>
 </resources>

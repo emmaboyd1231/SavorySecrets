@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.savorysecrets.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button login;
+    private Button log_in;
     private Button sign_up;
 
     @Override
@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login = (Button) findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
+        log_in = (Button) findViewById(R.id.log_in);
+        log_in.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v1) {
+            public void onClick(View v) {
                 openLoginActivity();
             }
         });
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         sign_up = (Button) findViewById(R.id.sign_up);
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v2) {
+            public void onClick(View v) {
                 openSignUpActivity();
             }
         });

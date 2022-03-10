@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.savorysecrets.AddRecipe;
+import com.example.savorysecrets.MainActivity;
 import com.example.savorysecrets.R;
 import com.example.savorysecrets.databinding.FragmentHomeBinding;
 
@@ -57,6 +58,14 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddRecipe.class);
                 startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent2);
             }
         });
         return view;

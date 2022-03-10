@@ -72,9 +72,9 @@
             android:id="@+id/sign_up_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SIGN UP"
-            android:onClick="this"
-            tools:ignore="OnClick" />
+            android:text="SIGN UP"/>
+            //android:onClick="this"
+            //tools:ignore="OnClick"/>
 
 
     </LinearLayout>

@@ -22,64 +22,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297"
-        app:srcCompat="@drawable/logo" />
-
     <Button
         android:id="@+id/my_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="128dp"
         android:backgroundTint="@android:color/black"
         android:fontFamily="serif"
         android:text="My Profile"
         android:textColor="@android:color/white"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="357dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/my_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="176dp"
         android:backgroundTint="@android:color/black"
         android:fontFamily="serif"
         android:text="My Recipes"
         android:textColor="@android:color/white"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="414dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/add_recipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
         android:backgroundTint="@android:color/black"
         android:fontFamily="serif"
         android:text="Add Recipe"
         android:textColor="@android:color/white"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="480dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="@android:color/black"
         android:fontFamily="serif"
         android:text="Logout"
         android:textColor="@android:color/white"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="540dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy login activity once successful
-                openHomeFragment();
+                openNavigationScreen();
                 finish();
             }
         });
@@ -125,18 +125,19 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                openHomeFragment();
+                openNavigationScreen();
             }
         });
     }
 
-    public void openHomeFragment(){
-        Intent intent3 = new Intent(this, HomeFragment.class);
+    public void openNavigationScreen(){
+        Intent intent3 = new Intent(this, NavigationScreen.class);
         startActivity(intent3);
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = getString(R.string.welcome);
+        //String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }

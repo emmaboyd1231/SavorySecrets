@@ -8,8 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.savorysecrets.ui.home.HomeFragment;
+import com.example.savorysecrets.R;
 
-public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
+public class SignUpActivity extends AppCompatActivity{
 
     private Button sign_up_account;
 
@@ -18,11 +19,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         sign_up_account = (Button) findViewById(R.id.sign_up_account);
+        sign_up_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNavigationScreen();
+            }
+        });
     }
 
-    @Override
-    public void onClick(View view) {
-        Intent intent = new Intent(this, HomeFragment.class);
+    private void openNavigationScreen() {
+        Intent intent = new Intent(this, NavigationScreen.class);
         startActivity(intent);
     }
 }

@@ -5,25 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddRecipe">
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Recipe"
-        android:textSize="35dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="87dp" />
+
     <ScrollView
         android:layout_width="409dp"
-        android:layout_height="582dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="148dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="89dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Recipe"
+                android:textSize="35dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="113dp"
+                tools:layout_editor_absoluteY="87dp" />
+
             <EditText
                 android:id="@+id/recipe_title"
                 android:layout_width="wrap_content"
@@ -31,8 +35,10 @@
                 android:autofillHints="@string/recipe_title"
                 android:ems="10"
                 android:hint="@string/recipe_title"
+                android:minHeight="48dp"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
             <EditText
                 android:id="@+id/recipe_ingredients"
                 android:layout_width="match_parent"
@@ -43,6 +49,7 @@
                 android:inputType="textMultiLine"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
             <EditText
                 android:id="@+id/recipe_step1"
                 android:layout_width="match_parent"
@@ -50,8 +57,10 @@
                 android:autofillHints="@string/recipe_step1"
                 android:ems="10"
                 android:hint="@string/recipe_step1"
+                android:minHeight="48dp"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
             <EditText
                 android:id="@+id/recipe_step2"
                 android:layout_width="match_parent"
@@ -59,8 +68,10 @@
                 android:autofillHints="@string/recipe_step2"
                 android:ems="10"
                 android:hint="@string/recipe_step2"
+                android:minHeight="48dp"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
             <EditText
                 android:id="@+id/recipe_step3"
                 android:layout_width="match_parent"
@@ -68,8 +79,10 @@
                 android:autofillHints="@string/recipe_step3"
                 android:ems="10"
                 android:hint="@string/recipe_step3"
+                android:minHeight="48dp"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
             <EditText
                 android:id="@+id/recipe_step4"
                 android:layout_width="match_parent"
@@ -77,8 +90,10 @@
                 android:autofillHints="@string/recipe_step4"
                 android:ems="10"
                 android:hint="@string/recipe_step4"
+                android:minHeight="48dp"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
             <EditText
                 android:id="@+id/recipe_step5"
                 android:layout_width="match_parent"
@@ -86,6 +101,7 @@
                 android:autofillHints="@string/recipe_step5"
                 android:ems="10"
                 android:hint="@string/recipe_step5"
+                android:minHeight="48dp"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
 
@@ -100,6 +116,12 @@
                 android:inputType="textMultiLine"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="442dp" />
+
+            <Button
+                android:id="@+id/add_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Recipe" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

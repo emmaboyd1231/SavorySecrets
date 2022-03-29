@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "395049265194",
+    "project_id": "savorysecrets-65d85",
+    "storage_bucket": "savorysecrets-65d85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395049265194:android:a73c422a3b81089500bb53",
+        "android_client_info": {
+          "package_name": "com.example.savorysecrets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395049265194-gu5ff7eavtn75oh6fe20rh6s2hlrguai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcKbGd3qI2-UjerOGX243tllNm1Aw0bzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395049265194-gu5ff7eavtn75oh6fe20rh6s2hlrguai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

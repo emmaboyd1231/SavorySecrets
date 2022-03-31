@@ -28,99 +28,115 @@
                 tools:layout_editor_absoluteX="113dp"
                 tools:layout_editor_absoluteY="87dp" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_title"
-                android:layout_width="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_title"
-                android:ems="10"
-                android:hint="@string/recipe_title"
-                android:minHeight="48dp"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_title">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_ingredients"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/recipe_ingredients"
-                android:inputType="textMultiLine"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/recipe_ingredients"
+                android:hint="@string/recipe_ingredients">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_step1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_step1"
-                android:ems="10"
-                android:hint="@string/recipe_step1"
-                android:minHeight="48dp"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_step1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_step2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_step2"
-                android:ems="10"
-                android:hint="@string/recipe_step2"
-                android:minHeight="48dp"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_step2">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_step3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_step3"
-                android:ems="10"
-                android:hint="@string/recipe_step3"
-                android:minHeight="48dp"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_step3">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_step4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_step4"
-                android:ems="10"
-                android:hint="@string/recipe_step4"
-                android:minHeight="48dp"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_step4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_step5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_step5"
-                android:ems="10"
-                android:hint="@string/recipe_step5"
-                android:minHeight="48dp"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_step5">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/recipe_cooking"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
+                android:layout_height="wrap_content"
                 android:autofillHints="@string/recipe_cooking"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/recipe_cooking"
-                android:inputType="textMultiLine"
-                tools:layout_editor_absoluteX="100dp"
-                tools:layout_editor_absoluteY="442dp" />
+                android:hint="@string/recipe_cooking">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/add_recipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/black"
                 android:text="Add Recipe" />
         </LinearLayout>
     </ScrollView>

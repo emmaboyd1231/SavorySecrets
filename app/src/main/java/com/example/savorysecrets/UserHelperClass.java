@@ -2,13 +2,14 @@ package com.example.savorysecrets;
 
 public class UserHelperClass {
 
-    String user_email, first_name, last_name, phone_number, user_password;
+    String user_email, user_username, first_name, last_name, phone_number, user_password;
 
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String user_email, String first_name, String last_name, String phone_number, String user_password) {
+    public UserHelperClass(String user_email, String user_username, String first_name, String last_name, String phone_number, String user_password) {
         this.user_email = user_email;
+        this.user_username = user_username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
@@ -51,5 +52,13 @@ public class UserHelperClass {
 
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
+    }
+
+    public String getUser_username() {
+        return user_username;
+    }
+
+    public void setUser_username(String user_username) {
+        this.user_username = user_username;
     }
 }

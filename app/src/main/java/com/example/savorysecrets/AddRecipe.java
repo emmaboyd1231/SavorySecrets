@@ -39,7 +39,7 @@ public class AddRecipe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("recipes");
+                reference = rootNode.getReference("users");
 
                 //Getting all the values
                 String title = r_title.getEditText().getText().toString();

@@ -23,10 +23,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
-    private Button my_profile;
-    private Button my_recipes;
-    private Button add_recipe;
-    private Button logout;
+    private Button my_recipes, add_recipe, logout;
     View view;
 
     @Override
@@ -38,34 +35,23 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        //final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                //textView.setText(s);
             }
         });
         //return root;
 
         view = inflater.inflate(R.layout.fragment_home,container,false);
-        Button add_recipe = (Button) view.findViewById(R.id.add_recipe);
-        Button my_recipes = (Button) view.findViewById(R.id.my_recipes);
-        Button my_profile = (Button) view.findViewById(R.id.my_profile);
         Button logout = (Button) view.findViewById(R.id.logout);
-
-        add_recipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AddRecipe.class);
-                startActivity(intent);
-            }
-        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent2);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
         return view;

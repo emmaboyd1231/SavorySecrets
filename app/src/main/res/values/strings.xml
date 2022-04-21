@@ -2,6 +2,7 @@
     <string name="app_name">SavorySecrets</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
+    <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_phonenumber">Phone Number</string>
     <string name="prompt_firstname">First Name</string>

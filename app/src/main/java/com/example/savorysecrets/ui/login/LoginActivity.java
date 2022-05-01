@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
     TextInputLayout username, password;
     Button login;
-    String currentUser;
+    public String currentUser;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;

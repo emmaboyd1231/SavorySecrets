@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.example.savorysecrets.ui.home.HomeFragment;
 import com.example.savorysecrets.R;
+import com.example.savorysecrets.ui.login.LoginActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity{
     Button sign_up_account;
     TextInputLayout email, user_name, fName, lName, pNumber, pword;
     private EditText inputUsername, inputPassword;
-    String currentUser;
+    public String currentUser;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -72,7 +73,7 @@ public class SignUpActivity extends AppCompatActivity{
 
                 if(validateEmail() == true && validateUsername() == true && validateFirstName() == true && validateLastName() == true && validatePhoneNumber() == true && validatePassword() == true){
                     currentUser= user_username;
-                    openNavigationScreen();
+                    openLoginActivity();
                 }
 
             }
@@ -195,8 +196,8 @@ public class SignUpActivity extends AppCompatActivity{
         //openNavigationScreen();
     }*/
 
-    private void openNavigationScreen() {
-        Intent intent = new Intent(this, NavigationScreen.class);
+    private void openLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }

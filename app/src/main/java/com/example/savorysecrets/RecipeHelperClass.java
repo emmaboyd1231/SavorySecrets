@@ -2,12 +2,13 @@ package com.example.savorysecrets;
 
 public class RecipeHelperClass {
 
-    String title, ingredients, step1, step2, step3, step4, step5, instructions;
+    String user_username, title, ingredients, step1, step2, step3, step4, step5, instructions;
 
     public RecipeHelperClass() {
     }
 
-    public RecipeHelperClass(String title, String ingredients, String step1, String step2, String step3, String step4, String step5, String instructions) {
+    public RecipeHelperClass(String user_username, String title, String ingredients, String step1, String step2, String step3, String step4, String step5, String instructions) {
+        this.user_username = user_username;
         this.title = title;
         this.ingredients = ingredients;
         this.step1 = step1;
@@ -16,6 +17,14 @@ public class RecipeHelperClass {
         this.step4 = step4;
         this.step5 = step5;
         this.instructions = instructions;
+    }
+
+    public String getUser_username() {
+        return user_username;
+    }
+
+    public void setUser_username(String user_username) {
+        this.user_username = user_username;
     }
 
     public String getTitle() {

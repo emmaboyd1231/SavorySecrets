@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,6 +21,8 @@ public class ProfilePage extends AppCompatActivity {
     private TextInputEditText editPhoneNumber;
 
     private DatabaseReference reference;
+    FirebaseUser user;
+    String user_username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,6 @@ public class ProfilePage extends AppCompatActivity {
         editPhoneNumber=findViewById(R.id.editPhoneNumber);
 
         reference = FirebaseDatabase.getInstance().getReference().child("users");
-
+        user = FirebaseAuth.getInstance().getCurrentUser();
     }
 }

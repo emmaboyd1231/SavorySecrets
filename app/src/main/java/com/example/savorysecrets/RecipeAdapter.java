@@ -13,8 +13,8 @@ import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter <RecipeAdapter.RecipeViewHolder>{
 
-    private Context mCtx;
-    private List<RecipeHelperClass> recipeList;
+    public Context mCtx;
+    public List<RecipeHelperClass> recipeList;
 
     public RecipeAdapter(Context mCtx, List<RecipeHelperClass> recipeList) {
         this.mCtx = mCtx;
@@ -23,32 +23,34 @@ public class RecipeAdapter extends RecyclerView.Adapter <RecipeAdapter.RecipeVie
 
     @NonNull
     @Override
-    public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mCtx).inflate(R.layout.recipe_list_layout, parent, false);
+    public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mCtx).inflate(R.layout.recipe_list_layout, null);
         return new RecipeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
+    public void onBindViewHolder(RecipeViewHolder holder, int position) {
         RecipeHelperClass recipe = recipeList.get(position);
 
-        holder.textViewTitle.setText(recipe.title);
+        /*holder.textViewTitle.setText(recipe.title);
         holder.textViewIngredients.setText(recipe.ingredients);
         holder.textViewStep1.setText(recipe.step1);
         holder.textViewStep2.setText(recipe.step2);
         holder.textViewStep3.setText(recipe.step3);
         holder.textViewStep4.setText(recipe.step4);
         holder.textViewStep5.setText(recipe.step5);
-        holder.textViewInstructions.setText(recipe.instructions);
+        holder.textViewInstructions.setText(recipe.instructions);*/
 
-        /*holder.textViewTitle.setText(recipe.getTitle());
+        holder.textViewUser.setText(recipe.getUser_username());
+        holder.textViewTitle.setText(recipe.getTitle());
         holder.textViewIngredients.setText(recipe.getIngredients());
         holder.textViewStep1.setText(recipe.getStep1());
         holder.textViewStep2.setText(recipe.getStep2());
         holder.textViewStep3.setText(recipe.getStep3());
         holder.textViewStep4.setText(recipe.getStep4());
         holder.textViewStep5.setText(recipe.getStep5());
-        holder.textViewInstructions.setText(recipe.getInstructions());*/
+        holder.textViewInstructions.setText(recipe.getInstructions());
+
     }
 
     @Override
@@ -58,11 +60,12 @@ public class RecipeAdapter extends RecyclerView.Adapter <RecipeAdapter.RecipeVie
 
     class RecipeViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewIngredients, textViewStep1, textViewStep2, textViewStep3, textViewStep4, textViewStep5, textViewInstructions;
+        TextView textViewUser, textViewTitle, textViewIngredients, textViewStep1, textViewStep2, textViewStep3, textViewStep4, textViewStep5, textViewInstructions;
 
-        public RecipeViewHolder(@NonNull View itemView) {
+        public RecipeViewHolder(View itemView) {
             super(itemView);
 
+            textViewUser = itemView.findViewById(R.id.textViewUser);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewIngredients = itemView.findViewById(R.id.textViewIngredients);
             textViewStep1 = itemView.findViewById(R.id.textViewStep1);

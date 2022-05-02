@@ -38,25 +38,15 @@ public class MyRecipes extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         recipeList = new ArrayList<>();
-
         adapter = new RecipeAdapter(this, recipeList);
         recyclerView.setAdapter(adapter);
 
-        /*recipeList.add(
-                new RecipeHelperClass(
-                        "emboyd31", "Pizza", "Ingredients Example", "Step 1 Example", "Step 2 Example", "Step 3 Example", "Step 4 Example", "Step 5 Example", "Instructions Example"));
-
-        recipeList.add(
-                new RecipeHelperClass(
-                        "ggrevera", "Pizza", "Ingredients Example", "Step 1 Example", "Step 2 Example", "Step 3 Example", "Step 4 Example", "Step 5 Example", "Instructions Example"));*/
-
-        //dbRecipes = FirebaseDatabase.getInstance().getReference("recipes");
-
+        //dbRecipes = FirebaseDatabase.getInstance().getReference().child("recipes");
+        //dbRecipes.addListenerForSingleValueEvent(valueEventListener);
         Query query = FirebaseDatabase.getInstance().getReference("recipes")
-                .orderByChild("user_username")
-                .equalTo("emboyd31");
+                .orderByChild("user_username");
+                //.equalTo(currentUser);
         query.addListenerForSingleValueEvent(valueEventListener);
     }
 
@@ -64,9 +54,9 @@ public class MyRecipes extends AppCompatActivity {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             recipeList.clear();
-            if(snapshot.exists()){
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    RecipeHelperClass recipe = snapshot.getValue(RecipeHelperClass.class);
+            if (snapshot.exists()) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    RecipeHelperClass recipe = dataSnapshot.getValue(RecipeHelperClass.class);
                     recipeList.add(recipe);
                 }
                 adapter.notifyDataSetChanged();
@@ -75,8 +65,6 @@ public class MyRecipes extends AppCompatActivity {
 
         @Override
         public void onCancelled(@NonNull DatabaseError error) {
-
         }
     };
-
 }

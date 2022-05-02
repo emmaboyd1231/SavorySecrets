@@ -61,20 +61,21 @@ public class SignUpActivity extends AppCompatActivity{
                 String phone_number = pNumber.getEditText().getText().toString();
                 String user_password = pword.getEditText().getText().toString();
 
-                UserHelperClass helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
-                reference.child(user_username).setValue(helperClass);
+                if(!validateEmail() | !validateUsername() | !validateFirstName() | !validateLastName() | !validatePhoneNumber() | !validatePassword()){
 
-                /*if(!validateEmail() | !validateUsername() | !validateFirstName() | !validateLastName() | !validatePhoneNumber() | !validatePassword()){
                     return;
                 }
                 else{
-                    openNavigationScreen();
-                }*/
-
-                if(validateEmail() == true && validateUsername() == true && validateFirstName() == true && validateLastName() == true && validatePhoneNumber() == true && validatePassword() == true){
+                    UserHelperClass helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
+                    reference.child(user_username).setValue(helperClass);
                     currentUser= user_username;
                     openLoginActivity();
                 }
+
+                /*if(validateEmail() == true && validateUsername() == true && validateFirstName() == true && validateLastName() == true && validatePhoneNumber() == true && validatePassword() == true){
+                    currentUser= user_username;
+                    openLoginActivity();
+                }*/
 
             }
         });
@@ -82,14 +83,20 @@ public class SignUpActivity extends AppCompatActivity{
 
     private Boolean validateEmail(){
         String val = email.getEditText().getText().toString();
-        String emailPattern = "[a-zA-Z0-9._]+@[a-z]+\\.+[a-z]+";
+        String emailPattern = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                ")+";
 
         if(val.isEmpty()){
             email.setError("Field cannot be empty");
             return false;
         }
         else if(!val.matches(emailPattern)){
-            email.setError("Invalid email address");
+            email.setError("Invalid email address, no @ sign");
             return false;
         }
         else{
@@ -100,13 +107,20 @@ public class SignUpActivity extends AppCompatActivity{
 
     private Boolean validateUsername(){
         String val = user_name.getEditText().getText().toString();
+        String noWhiteSpace = "\\A\\w{4,20}\\z";
 
-        if(val.isEmpty()){
+        if (val.isEmpty()) {
             user_name.setError("Field cannot be empty");
             return false;
-        }
-        else{
-            email.setError(null);
+        } else if (val.length() >= 15) {
+            user_name.setError("Username too long");
+            return false;
+        } else if (!val.matches(noWhiteSpace)) {
+            user_name.setError("White Spaces are not allowed");
+            return false;
+        } else {
+            user_name.setError(null);
+            user_name.setErrorEnabled(false);
             return true;
         }
     }
@@ -148,24 +162,28 @@ public class SignUpActivity extends AppCompatActivity{
         }
         else{
             pNumber.setError(null);
+            pNumber.setErrorEnabled(false);
             return true;
         }
     }
 
     private Boolean validatePassword(){
         String val = pword.getEditText().getText().toString();
-        String passwordVal = "^" +
-                "(?=.*[a-zA-Z])" + // any letter
-                "(?=.*[@#$%^&+=])" + //at least one special character
-                "(?=\\S$)" + //no white spaces
-                ".(6,)" + //at least 6 characters
+        String passwordVal =  "^" +
+                "(?=.*[0-9])" +         //at least 1 digit
+                "(?=.*[a-z])" +         //at least 1 lower case letter
+                "(?=.*[A-Z])" +         //at least 1 upper case letter
+                "(?=.*[a-zA-Z])" +      //any letter
+                "(?=.*[@#$%^&+=])" +    //at least 1 special character
+                "(?=\\S+$)" +           //no white spaces
+                ".{6,}" +               //at least 6 characters
                 "$";
         if(val.isEmpty()){
             pword.setError("Field cannot be empty");
             return false;
         }
         else if(!val.matches(passwordVal)){
-            pword.setError("Password is too weak");
+            pword.setError("Password is too weak. Password must include 1 digit, 1 lower case letter, 1 uppercase letter, one special character, and at least 6 characters.");
             return false;
         }
         else{
@@ -179,7 +197,7 @@ public class SignUpActivity extends AppCompatActivity{
             return;
         }
         else{
-            openNavigationScreen();
+            openLoginActivity();
         }
 
         //Getting all the values

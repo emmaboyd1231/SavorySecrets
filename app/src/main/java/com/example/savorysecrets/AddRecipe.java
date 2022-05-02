@@ -60,9 +60,9 @@ public class AddRecipe extends AppCompatActivity {
         String step5 = r_step5.getEditText().getText().toString();
         String instructions = r_instructions.getEditText().getText().toString();
 
-        String id = reference.push().getKey();
+        //String id = reference.push().getKey();
         RecipeHelperClass helperClass2 = new RecipeHelperClass(user_username, title, ingredients, step1, step2, step3, step4, step5, instructions);
-        reference.child(id).setValue(helperClass2);
+        reference.child(title).setValue(helperClass2);
     }
 
     private void openNavigationScreen() {

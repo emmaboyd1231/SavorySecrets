@@ -68,7 +68,7 @@
             android:layout_height="match_parent"
             android:backgroundTint="@android:color/black"
             android:fontFamily="serif"
-            android:text="My Recipes"
+            android:text="Recipes"
             android:textColor="@android:color/white"
             android:textSize="20dp"/>
 

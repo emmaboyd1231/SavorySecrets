@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,125 +12,29 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="#fece2f"
-            android:padding="20dp">
-
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/profile_picture" />
-
-            <TextView
-                android:id="@+id/firstName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_image"
-                android:includeFontPadding="false"
-                android:text="Emma"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/lastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/firstName"
-                android:includeFontPadding="false"
-                android:text="Boyd"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/emailAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/firstName"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_image"
-                android:includeFontPadding="false"
-                android:text="emboyd31@gmail.com"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/edit_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-100dp"
-            android:padding="20dp">
+            android:layout_centerInParent="true"
+            android:backgroundTint="#fece2f"
+            android:fontFamily="serif"
+            android:text="Edit Profile Info"
+            android:layout_below="@+id/editProfileImage"
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="#fece2f"
-                app:cardElevation="10dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="55dp"
-                        android:layout_height="45dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/information_icon" />
-
-                    <Button
-                        android:id="@+id/profile_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:backgroundTint="#fece2f"
-                        android:fontFamily="serif"
-                        android:text="Profile Info"
-                        android:textColor="@android:color/black"
-                        android:textSize="15dp" />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="#fece2f"
-                app:cardElevation="10dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="42dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/friends_icon" />
-
-                    <Button
-                        android:id="@+id/friends_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:backgroundTint="#fece2f"
-                        android:fontFamily="serif"
-                        android:text="Other Users"
-                        android:textColor="@android:color/black"
-                        android:textSize="15dp" />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/view_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#fece2f"
+            android:fontFamily="serif"
+            android:text="Profile Page"
+            android:layout_below="@+id/editProfileImage"
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
 
     </LinearLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

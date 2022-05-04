@@ -4,23 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUpActivity"
+    android:background="#fece2f">
 
     <LinearLayout
-        android:id="@+id/LinearLayout1"
+        android:id="@+id/LinearLayoutSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="200dp">
+        tools:layout_editor_absoluteY="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
         <TextView
             android:id="@+id/signUpText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:shadowColor="#FFFFFFFF"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="10"
             android:text="SIGN UP"
+            android:textColor="@android:color/black"
             android:textSize="45dp"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="111dp"
@@ -115,9 +124,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/black"
-            android:onClick="registerUser"
             android:text="SIGN UP"
             android:textSize="20dp" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:text="Already Have An Account? Login Here."
+            android:textSize="10dp"/>
 
     </LinearLayout>
 

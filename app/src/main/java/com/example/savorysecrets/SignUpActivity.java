@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity{
     public static final String TAG = "TAG";
-    Button sign_up_account;
+    Button sign_up_account, login;
     TextInputLayout email, user_name, fName, lName, pNumber, pword;
     private EditText inputUsername, inputPassword;
     public String currentUser;
@@ -44,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity{
     ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
+    UserHelperClass helperClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,47 +81,39 @@ public class SignUpActivity extends AppCompatActivity{
                 String phone_number = pNumber.getEditText().getText().toString();
                 String user_password = pword.getEditText().getText().toString();
 
-                if(!validateEmail() | !validateUsername() | !validateFirstName() | !validateLastName() | !validatePhoneNumber() | !validatePassword()){
+                FirebaseUser fuser = fAuth.getInstance().getCurrentUser();
+
+               /* if(!validateEmail() | !validateUsername() | !validateFirstName() | !validateLastName() | !validatePhoneNumber() | !validatePassword()){
                     return;
                 }
                 else{
-                    UserHelperClass helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
-                    reference.child(user_username).setValue(helperClass);
+                    helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
+                    reference.child(userID).setValue(helperClass);
                     currentUser= user_username;
                     openLoginActivity();
-                }
+                }*/
 
 
                 fAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-
-                            /* send verification link
-
-                            FirebaseUser fuser = fAuth.getCurrentUser();
-                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(SignUpActivity.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
-                                }
-                            });*/
-
-                            FirebaseUser fuser = fAuth.getCurrentUser();
-
-                            Toast.makeText(SignUpActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
+                        if((task.isSuccessful()) && (validateEmail() && validateUsername() && validateFirstName() && validateLastName() && validatePhoneNumber() && validatePassword())) {
+                            helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
+                            reference.child(userID).setValue(helperClass);
+                            //currentUser= user_username;
+                            Toast.makeText(SignUpActivity.this, "Success! User Created.", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
                             user.put("fName",first_name);
-                            user.put("email",user_email);
+                            user.put("lName",last_name);
                             user.put("phone",phone_number);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            user.put("email",user_email);
+                            user.put("password",user_password);
+                            user.put("username",user_username);
+                            openLoginActivity();
+
+                            /*documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
@@ -130,16 +123,25 @@ public class SignUpActivity extends AppCompatActivity{
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d(TAG, "onFailure: " + e.toString());
                                 }
-                            });
+                            });*/
                             //startActivity(new Intent(getApplicationContext(),MainActivity.class));
-
-                        }else {
-                            Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
+                        }
+                        else {
+                            //Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "Error! User not Created.", Toast.LENGTH_SHORT).show();
+                            //progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
 
+            }
+        });
+
+        login = (Button) findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLoginActivity();
             }
         });
     }
@@ -259,6 +261,8 @@ public class SignUpActivity extends AppCompatActivity{
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
+
 
     public String getCurrentUser() {
         return currentUser;

@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.savorysecrets.AddRecipe;
+import com.example.savorysecrets.AllRecipes;
 import com.example.savorysecrets.MyRecipes;
 import com.example.savorysecrets.R;
 import com.example.savorysecrets.databinding.FragmentDashboardBinding;
@@ -46,6 +47,7 @@ public class DashboardFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_dashboard,container,false);
         Button add_recipe = (Button) view.findViewById(R.id.add_recipe);
         Button my_recipes = (Button) view.findViewById(R.id.my_recipes);
+        Button all_recipes = (Button) view.findViewById(R.id.all_recipes);
 
         add_recipe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +64,15 @@ public class DashboardFragment extends Fragment {
                 startActivity(intent2);
             }
         });
+
+        all_recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(getActivity(), AllRecipes.class);
+                startActivity(intent3);
+            }
+        });
+
         return view;
     }
 

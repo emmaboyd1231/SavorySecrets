@@ -5,7 +5,7 @@
     //android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         android:layout_margin="5dp">
 
@@ -13,16 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp">
-
-            <TextView
-                android:id="@+id/textViewUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textViewTitle"
-                android:layout_marginLeft="5dp"
-                android:text="User"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/textViewTitle"
@@ -34,10 +24,20 @@
                 android:textColor="#000000" />
 
             <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewTitle"
+                android:layout_marginLeft="5dp"
+                android:text="Email"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+            <TextView
                 android:id="@+id/textViewIngredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewUser"
+                android:layout_below="@id/textViewEmail"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:text="Ingredients"

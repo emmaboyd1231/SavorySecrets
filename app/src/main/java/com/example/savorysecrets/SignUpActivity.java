@@ -98,11 +98,10 @@ public class SignUpActivity extends AppCompatActivity{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if((task.isSuccessful()) && (validateEmail() && validateUsername() && validateFirstName() && validateLastName() && validatePhoneNumber() && validatePassword())) {
+                            userID = fAuth.getCurrentUser().getUid();
                             helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
                             reference.child(userID).setValue(helperClass);
-                            //currentUser= user_username;
                             Toast.makeText(SignUpActivity.this, "Success! User Created.", Toast.LENGTH_SHORT).show();
-                            userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
                             user.put("fName",first_name);

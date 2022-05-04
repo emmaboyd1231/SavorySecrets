@@ -60,8 +60,6 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.emailAddress);
         pword = findViewById(R.id.password);
 
-        login = (Button) findViewById(R.id.login);
-
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
@@ -72,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        login = (Button) findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

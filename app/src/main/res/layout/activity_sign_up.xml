@@ -15,7 +15,7 @@
         android:gravity="center"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="200dp"
+        tools:layout_editor_absoluteY="5dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true">
 
@@ -23,6 +23,7 @@
             android:id="@+id/signUpText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:gravity="center"
             android:shadowColor="#FFFFFFFF"
             android:shadowDx="8"
@@ -40,6 +41,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:autofillHints="@string/prompt_email"
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress">

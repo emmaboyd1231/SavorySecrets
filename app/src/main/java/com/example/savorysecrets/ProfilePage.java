@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.savorysecrets.databinding.FragmentNotificationsBinding;
 import com.example.savorysecrets.ui.notifications.NotificationsViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,8 +26,8 @@ import java.io.File;
 
 public class ProfilePage extends AppCompatActivity {
 
-    private NotificationsViewModel notificationsViewModel;
-    private FragmentNotificationsBinding binding;
+    //private NotificationsViewModel notificationsViewModel;
+    //private FragmentNotificationsBinding binding;
     private TextView firstName, lastName, username, emailAddress, phoneNumber, password;
 
     FirebaseAuth fAuth;

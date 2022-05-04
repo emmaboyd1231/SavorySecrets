@@ -5,36 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment"
-    android:background="@color/black">
+    android:background="#fece2f">
 
     <LinearLayout
+        android:id="@+id/LinearLayoutProfile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
-        <Button
-            android:id="@+id/edit_profile"
+        <TextView
+            android:id="@+id/recipesText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:backgroundTint="#fece2f"
-            android:fontFamily="serif"
-            android:text="Edit Profile Info"
-            android:layout_below="@+id/editProfileImage"
-            android:textColor="@android:color/black"
-            android:textSize="15dp" />
+            android:gravity="center"
+            android:text="Profile"
+            android:textSize="50dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="44dp"
+            android:textColor="@android:color/black"/>
+
+        <ImageView
+            android:id="@+id/profilePageImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/profile_page_icon"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="315dp"/>
 
         <Button
             android:id="@+id/view_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/profilePageImage"
             android:layout_centerInParent="true"
-            android:backgroundTint="#fece2f"
+            android:backgroundTint="@android:color/black"
             android:fontFamily="serif"
             android:text="Profile Page"
-            android:layout_below="@+id/editProfileImage"
-            android:textColor="@android:color/black"
-            android:textSize="15dp" />
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/logoutPageImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logout_page_icon"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="520dp"/>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logoutPageImage"
+                android:layout_centerInParent="true"
+                android:backgroundTint="@android:color/black"
+                android:fontFamily="serif"
+                android:text="Logout"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

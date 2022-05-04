@@ -6,19 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.app.Dialog;
-import android.util.Log;
-import android.widget.TextView;
 
+import com.example.savorysecrets.MainActivity;
 import com.example.savorysecrets.ProfilePage;
-import com.example.savorysecrets.UserHelperClass;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,8 +16,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.savorysecrets.OtherUsersPage;
-import com.example.savorysecrets.EditProfilePage;
 import com.example.savorysecrets.R;
 import com.example.savorysecrets.databinding.FragmentNotificationsBinding;
 
@@ -35,7 +23,7 @@ public class NotificationsFragment extends Fragment {
 
     private NotificationsViewModel notificationsViewModel;
     private FragmentNotificationsBinding binding;
-    private Button edit_profile, view_profile;
+    private Button edit_profile, view_profile, logout;
     View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -56,16 +44,9 @@ public class NotificationsFragment extends Fragment {
         //return root;
 
         view = inflater.inflate(R.layout.fragment_notifications,container,false);
-        Button edit_profile = (Button) view.findViewById(R.id.edit_profile);
         Button view_profile = (Button) view.findViewById(R.id.view_profile);
+        Button logout = (Button) view.findViewById(R.id.logout);
 
-        edit_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getActivity(), EditProfilePage.class);
-                startActivity(intent1);
-            }
-        });
 
         view_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +56,13 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent3);
+            }
+        });
         return view;
     }
 

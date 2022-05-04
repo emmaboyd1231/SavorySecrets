@@ -41,7 +41,7 @@ public class RecipeAdapter extends RecyclerView.Adapter <RecipeAdapter.RecipeVie
         holder.textViewStep5.setText(recipe.step5);
         holder.textViewInstructions.setText(recipe.instructions);*/
 
-        holder.textViewUser.setText(recipe.getUser_username());
+        holder.textViewEmail.setText(recipe.getEmail());
         holder.textViewTitle.setText(recipe.getTitle());
         holder.textViewIngredients.setText(recipe.getIngredients());
         holder.textViewStep1.setText(recipe.getStep1());
@@ -60,12 +60,12 @@ public class RecipeAdapter extends RecyclerView.Adapter <RecipeAdapter.RecipeVie
 
     class RecipeViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewUser, textViewTitle, textViewIngredients, textViewStep1, textViewStep2, textViewStep3, textViewStep4, textViewStep5, textViewInstructions;
+        TextView textViewEmail, textViewTitle, textViewIngredients, textViewStep1, textViewStep2, textViewStep3, textViewStep4, textViewStep5, textViewInstructions;
 
         public RecipeViewHolder(View itemView) {
             super(itemView);
 
-            textViewUser = itemView.findViewById(R.id.textViewUser);
+            textViewEmail = itemView.findViewById(R.id.textViewEmail);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewIngredients = itemView.findViewById(R.id.textViewIngredients);
             textViewStep1 = itemView.findViewById(R.id.textViewStep1);

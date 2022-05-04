@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/newRecipeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Recipe"
@@ -31,12 +31,12 @@
                 android:textColor="@android:color/black"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/username"
+                android:id="@+id/emailAddress"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="Username"
-                android:hint="Username"
+                android:autofillHints="Email Address (associated with account)"
+                android:hint="Email Address"
                 android:textColor="@android:color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"

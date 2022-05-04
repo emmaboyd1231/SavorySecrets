@@ -1,14 +1,9 @@
 package com.example.savorysecrets;
 
-import android.app.Dialog;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,7 +11,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.savorysecrets.databinding.ActivityNavigationScreenBinding;
-
 
 public class NavigationScreen extends AppCompatActivity {
 
@@ -28,7 +22,6 @@ public class NavigationScreen extends AppCompatActivity {
 
         binding = ActivityNavigationScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

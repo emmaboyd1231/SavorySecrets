@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddRecipe extends AppCompatActivity {
 
     private Button add_recipe;
-    TextInputLayout user_name, r_title, r_ingredients, r_step1, r_step2, r_step3, r_step4, r_step5, r_instructions;
+    TextInputLayout email_address, r_title, r_ingredients, r_step1, r_step2, r_step3, r_step4, r_step5, r_instructions;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -26,7 +26,7 @@ public class AddRecipe extends AppCompatActivity {
 
         add_recipe = (android.widget.Button) findViewById(R.id.add_recipe);
 
-        user_name = findViewById(R.id.username);
+        email_address = findViewById(R.id.emailAddress);
         r_title = findViewById(R.id.recipe_title);
         r_ingredients = findViewById(R.id.recipe_ingredients);
         r_step1 = findViewById(R.id.recipe_step1);
@@ -50,7 +50,7 @@ public class AddRecipe extends AppCompatActivity {
 
     private void addRecipe(){
         //Getting all the values
-        String user_username = user_name.getEditText().getText().toString();
+        String email = email_address.getEditText().getText().toString();
         String title = r_title.getEditText().getText().toString();
         String ingredients = r_ingredients.getEditText().getText().toString();
         String step1 = r_step1.getEditText().getText().toString();
@@ -61,7 +61,7 @@ public class AddRecipe extends AppCompatActivity {
         String instructions = r_instructions.getEditText().getText().toString();
 
         //String id = reference.push().getKey();
-        RecipeHelperClass helperClass2 = new RecipeHelperClass(user_username, title, ingredients, step1, step2, step3, step4, step5, instructions);
+        RecipeHelperClass helperClass2 = new RecipeHelperClass(email, title, ingredients, step1, step2, step3, step4, step5, instructions);
         reference.child(title).setValue(helperClass2);
     }
 

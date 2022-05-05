@@ -93,24 +93,25 @@ public class SignUpActivity extends AppCompatActivity{
                     openLoginActivity();
                 }*/
 
-
-                fAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if((task.isSuccessful()) && (validateEmail() && validateUsername() && validateFirstName() && validateLastName() && validatePhoneNumber() && validatePassword())) {
-                            userID = fAuth.getCurrentUser().getUid();
-                            helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
-                            reference.child(userID).setValue(helperClass);
-                            Toast.makeText(SignUpActivity.this, "Success! User Created.", Toast.LENGTH_SHORT).show();
-                            DocumentReference documentReference = fStore.collection("users").document(userID);
-                            Map<String,Object> user = new HashMap<>();
-                            user.put("fName",first_name);
-                            user.put("lName",last_name);
-                            user.put("phone",phone_number);
-                            user.put("email",user_email);
-                            user.put("password",user_password);
-                            user.put("username",user_username);
-                            openLoginActivity();
+                if(validateEmail() && validateUsername() && validateFirstName() && validateLastName() && validatePhoneNumber() && validatePassword()) {
+                    fAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            //if((task.isSuccessful()) && (validateEmail() && validateUsername() && validateFirstName() && validateLastName() && validatePhoneNumber() && validatePassword())) {
+                            if (task.isSuccessful()) {
+                                userID = fAuth.getCurrentUser().getUid();
+                                helperClass = new UserHelperClass(user_email, user_username, first_name, last_name, phone_number, user_password);
+                                reference.child(userID).setValue(helperClass);
+                                Toast.makeText(SignUpActivity.this, "Success! User Created.", Toast.LENGTH_SHORT).show();
+                                DocumentReference documentReference = fStore.collection("users").document(userID);
+                                Map<String, Object> user = new HashMap<>();
+                                user.put("fName", first_name);
+                                user.put("lName", last_name);
+                                user.put("phone", phone_number);
+                                user.put("email", user_email);
+                                user.put("password", user_password);
+                                user.put("username", user_username);
+                                openLoginActivity();
 
                             /*documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -123,15 +124,15 @@ public class SignUpActivity extends AppCompatActivity{
                                     Log.d(TAG, "onFailure: " + e.toString());
                                 }
                             });*/
-                            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            } else {
+                                //Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Error! User not Created.", Toast.LENGTH_SHORT).show();
+                                //progressBar.setVisibility(View.GONE);
+                            }
                         }
-                        else {
-                            //Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            Toast.makeText(SignUpActivity.this, "Error! User not Created.", Toast.LENGTH_SHORT).show();
-                            //progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
+                    });
+                }
 
             }
         });

@@ -14,19 +14,25 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="100dp">
+        tools:layout_editor_absoluteY="100dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/recipesText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:gravity="center"
+            android:shadowColor="#FFFFFFFF"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="10"
             android:text="Recipes"
-            android:textSize="50dp"
+            android:textColor="@android:color/black"
+            android:textSize="40dp"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="44dp"
-            android:textColor="@android:color/black"/>
+            tools:layout_editor_absoluteX="111dp"
+            tools:layout_editor_absoluteY="44dp"/>
 
         <TextView
             android:id="@+id/text_dashboard2"
